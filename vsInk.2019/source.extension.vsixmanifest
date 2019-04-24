@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="vsInk.f0774968-18f6-4501-b3cd-b8199b4f1e1e" Version="1.0" Language="en-US" Publisher="Craig Sutherland" />
+        <Identity Id="vsInk.f0774968-18f6-4501-b3cd-b8199b4f1e1e" Version="0.1" Language="en-US" Publisher="Craig Sutherland" />
         <DisplayName>vsInk</DisplayName>
-        <Description xml:space="preserve">vsInk for Visual Studio 2019</Description>
+        <Description xml:space="preserve">An extenstion to allow freeform digital ink annotations in the code editor.</Description>
+        <License>LICENSE</License>
+        <ReleaseNotes>Release.txt</ReleaseNotes>
+        <Icon>Package.ico</Icon>
+        <PreviewImage>Package.png</PreviewImage>
+        <Preview>true</Preview>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
@@ -16,6 +21,6 @@
     </Prerequisites>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-      <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
-  </Assets>
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+    </Assets>
 </PackageManifest>

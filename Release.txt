@@ -1,0 +1,28 @@
+Release 0.1
+===========
+This is an initial pre-release of vsInk. It contains the basic functionality of freeform digital ink annotations in the code editor. However, it only contains the basic functionality.
+
+The current functionality is:
+* Draw digital ink in the code editor (any language that uses the standard code editor)
+* Erase digital ink
+* Save and load digital ink
+* Attach (anchor) ink to a location in the text document
+* Change the appearance (refit) the ink in response to changes in the underlying document
+
+This version of vsInk contains four renderers. The renderer is responsible for refitting the annotation in response to any changes in the underlying text document. Rather than modifying the original annotation, it draws (renders) a new annotation based on the original. The included renderers are:
+* Single stroke
+  * Single Point: Draws the original annotation, unmodified. Anchored to the top line of the original annotation.
+  * Double Point Stretch: Stretches the annotation so it fits between the original top and bottom lines.
+* Segmented
+  * Simple Line Split: Splits the annotation per line.
+  * Line Split with Joiner: Splits the annotation per line and adds a vertical joining line between the endpoints.
+The current renderer can be changed by using the configuration settings.
+
+Note: this version is a bare-bones version of vsInk. It does not include any navigation functionality (collapsed region adornments and the navigator) or functionality based on recognition (grouping and cleaning).
+
+Background
+==========
+vsInk is based on my PhD work at The University of Auckland:
+* Sutherland, C. J. (2017). An Investigation into Freeform, Dynamic, Digital Ink Annotation for Program Code (Doctoral dissertation, ResearchSpace@ Auckland).
+* Sutherland, C. J., Luxton-Reilly, A., & Plimmer, B. (2016, September). Who changed my annotation? An investigation into refitting freeform ink annotations. In 2016 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC) (pp. 12-20). IEEE.
+* Sutherland, C. J., & Plimmer, B. (2013, January). vsInk: Integrating digital ink with program code in Visual Studio. In Proceedings of the Fourteenth Australasian User Interface Conference-Volume 139 (pp. 13-22). Australian Computer Society, Inc.
