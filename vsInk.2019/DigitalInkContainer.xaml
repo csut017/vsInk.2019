@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="vsInk.DigitalInkContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:vsInk"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" CornerRadius="5" Margin="3" Padding="3,0,3,1" Background="#88aaaaaa">
+            <TextBlock Text="vsInk" FontStyle="Italic" Foreground="#88000000" />
+        </Border>
+        <Canvas x:Name="Underneath" Background="Transparent" />
+        <InkCanvas Background="Transparent" x:Name="InkCanvas" />
+    </Grid>
+</UserControl>

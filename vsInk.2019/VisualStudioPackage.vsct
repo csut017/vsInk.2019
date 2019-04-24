@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Commands package="guidvsInkPackage">
+    <Menus>
+      <Menu guid="guidvsInkCmdSet" id="mnuToolbar" priority="0x0000" type="Toolbar">
+        <Parent guid="guidvsInkCmdSet" id="mnuToolbar" />
+        <CommandFlag>DefaultDocked</CommandFlag>
+        <Strings>
+          <ButtonText>vsInk</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+    <Groups>
+      <Group guid="guidvsInkCmdSet" id="grpOverall" priority="0x0600">
+        <Parent guid="guidvsInkCmdSet" id="mnuToolbar" />
+      </Group>
+      <Group guid="guidvsInkCmdSet" id="grpEditMode" priority="0x0601">
+        <Parent guid="guidvsInkCmdSet" id="mnuToolbar" />
+      </Group>
+      <Group guid="guidvsInkCmdSet" id="grpConfiguration" priority="0x0602">
+        <Parent guid="guidvsInkCmdSet" id="mnuToolbar" />
+      </Group>
+    </Groups>
+    <Buttons>
+      <Button guid="guidvsInkCmdSet" id="cmdidDrawMode" priority="0x0201" type="Button">
+        <Parent guid="guidvsInkCmdSet" id="grpEditMode" />
+        <Icon guid="guidImages" id="bmpDraw" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Pen mode</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidvsInkCmdSet" id="cmdidEraseMode" priority="0x0202" type="Button">
+        <Parent guid="guidvsInkCmdSet" id="grpEditMode" />
+        <Icon guid="guidImages" id="bmpErase" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Erase mode</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidvsInkCmdSet" id="cmdidDigitalInk" priority="0x0100" type="Button">
+        <Parent guid="guidvsInkCmdSet" id="grpOverall" />
+        <Icon guid="guidImages" id="bmpDigitalInk" />
+        <Strings>
+          <ButtonText>Digital ink</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidvsInkCmdSet" id="cmdidConfigure" priority="0x0100" type="Button">
+        <Parent guid="guidvsInkCmdSet" id="grpConfiguration" />
+        <Icon guid="guidImages" id="bmpGear" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Configure</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\MenuBar.png" usedList="bmpDigitalInk, bmpDraw, bmpErase, bmpGear" />
+    </Bitmaps>
+  </Commands>
+  <Symbols>
+    <GuidSymbol name="guidvsInkPackage" value="{e266fa7c-a429-4d46-8516-5b73e25fd9cd}" />
+    <GuidSymbol name="guidvsInkCmdSet" value="{D05DFCEA-D613-4AFC-A9D0-B53E1D836DC3}">
+      <!-- Menus -->
+      <IDSymbol name="mnuToolbar" value="0x1002" />
+
+      <!-- Groups -->
+      <IDSymbol name="grpOverall" value="0x2002" />
+      <IDSymbol name="grpConfiguration" value="0x2003" />
+      <IDSymbol name="grpEditMode" value="0x2004" />
+
+      <!-- Commands -->
+      <IDSymbol name="cmdidDigitalInk" value="0x3001" />
+      <IDSymbol name="cmdidConfigure" value="0x3002" />
+      <IDSymbol name="cmdidDrawMode" value="0x3003" />
+      <IDSymbol name="cmdidEraseMode" value="0x3004" />
+    </GuidSymbol>
+    <GuidSymbol name="guidImages" value="{4C25CA3F-704E-4CBB-8D80-F583DFE71E70}">
+      <IDSymbol name="bmpDigitalInk" value="1" />
+      <IDSymbol name="bmpDraw" value="2" />
+      <IDSymbol name="bmpErase" value="3" />
+      <IDSymbol name="bmpGear" value="4" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

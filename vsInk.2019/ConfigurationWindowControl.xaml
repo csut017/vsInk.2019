@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="vsInk.ConfigurationWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:vsInk"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="0,3,3,3" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Margin" Value="0,3,3,3" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="125" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Display Mode:"></TextBlock>
+        <ComboBox Grid.Row="0" Grid.Column="1" SelectedItem="{Binding InkDisplayMode, Mode=TwoWay}" ItemsSource="{Binding AvailableInkDisplayModes}"></ComboBox>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Render Mode:"></TextBlock>
+        <ComboBox Grid.Row="1" Grid.Column="1" SelectedItem="{Binding AnnotationRendererName, Mode=TwoWay}" ItemsSource="{Binding AvailableAnnotationRendererNames}"></ComboBox>
+        <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding AdvancedSettings, Mode=TwoWay}" Content="Show Advanced Settings" Margin="3" />
+        <TextBlock Visibility="{Binding AdvancedSettingsVisibility}" Grid.Row="3" Grid.Column="0" Text="Show Boundaries For:" />
+        <CheckBox Visibility="{Binding AdvancedSettingsVisibility}" Grid.Row="3" Grid.Column="1" IsChecked="{Binding ShowAnnotationBoundaries, Mode=TwoWay}" Content="Annotations" />
+        <CheckBox Visibility="{Binding AdvancedSettingsVisibility}" Grid.Row="4" Grid.Column="1" IsChecked="{Binding ShowLineBoundaries, Mode=TwoWay}" Content="Lines" />
+        <CheckBox Visibility="{Binding AdvancedSettingsVisibility}" Grid.Row="5" Grid.Column="1" IsChecked="{Binding ShowSegmentBoundaries, Mode=TwoWay}" Content="Segments" />
+        <TextBlock Visibility="{Binding AdvancedSettingsVisibility}" Grid.Row="6" Grid.Column="0" Text="Extension Colour:" />
+        <ComboBox Visibility="{Binding AdvancedSettingsVisibility}" Grid.Row="6" Grid.Column="1" SelectedItem="{Binding ExtensionColour, Mode=TwoWay}" ItemsSource="{Binding AvailableExtensionColours}"></ComboBox>
+        <TextBlock Visibility="{Binding AdvancedSettingsVisibility}" Grid.Row="7" Grid.Column="0" Text="Line Style:" />
+        <ComboBox Visibility="{Binding AdvancedSettingsVisibility}" Grid.Row="7" Grid.Column="1" SelectedItem="{Binding StitchType, Mode=TwoWay}" ItemsSource="{Binding AvailableStitchTypes}"></ComboBox>
+    </Grid>
+</UserControl>
