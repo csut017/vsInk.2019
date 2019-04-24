@@ -1,3 +1,7 @@
-# vsInk.2019
+# vsInk
 
-Extension to allow adding freeform digital ink to the code editor in Visual Studio 2019.
+## Introduction
+
+vsInk is a Visual Studio extension that allows adding freeform digital ink to a text document.
+
+<img src="doc/ScreenShot.png">
